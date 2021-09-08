@@ -1,3 +1,30 @@
+#######################################
+# Sukurkite fuzzy sistemos modelį, kuris apskaičiuotų žmogaus sirgimo trukmę korona virusu.
+
+# Įėjimo kintamieji:
+#	Lėtinių ligų skaičius (pvz., [0-15]), fuzzy aibės: mažas, vidutinis, didelis
+#	Rūkimo laikotarpis metais (pvz., [0-50]), fuzzy aibės: trumpas, vidutinis, ilgas
+#	Amžius (pvz., [0-100]) , fuzzy aibės: jaunas, vidutinis, senas
+#
+# Išėjimo kintamieji:
+# 	Sirgimo trukmė (pvz., [7-22]), fuzzy aibės: trumpa, vidutiniška, ilga
+	
+
+# if (jaunas and rūko trumpai) then sirgimo trukmė trumpa
+# if (jaunas and lėtinių ligų mažai) then sirgimo trukmė trumpa
+# if (senas or lėtinių ligų skaičius vidutinis) then sirgimo trukmė ilga
+# if (vidutinio amžiaus or rūkimo trukmė ilga) then sirgimo trukmė vidutinė
+# if (senas) then sirgimo trukmė vidutinė
+# if (jaunas and rūkimo trukmė ilga) then sirgimo trukmė vidutinė
+# if (lėtinių ligų skaičius vidutinis and rūkimo trukmė vidutinė) then sirgimo trukmė vidutinė
+# if (jaunas or rūkimo trukmė trumpa) then sirgimo trukmė trumpa
+# if (vidutinio amžiaus and lėtinių ligų skaičius didelis) then sirgimo trukmė ilga
+# if (if jaunas and lėtinių ligų skaičius didelis) sirgimo trukmė vidutinė
+#######################################
+
+
+
+
 import shapely
 from shapely.geometry import LineString, Point
 
